@@ -36,20 +36,36 @@ class MoviePage extends StatelessWidget {
       body: Stack(
         children: [
           BackgroundGradient(),
-          Opacity(
-            opacity: 1.0,
-            child: Image.asset(
-              "assets/SasL.jpg",
-              height: 210,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
-          ),
+          
           SingleChildScrollView(
               child: SafeArea(
                   child: Column(
             children: [
-              Padding(
+              Opacity(
+            opacity: 1.0,
+            child: Stack(
+              children: [
+                Container(
+                  child: Image.asset(
+                    "assets/SasL.jpg",
+                    height: 210,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Align(
+            alignment: Alignment.topLeft,
+            child: Icon(
+                          Icons.arrow_back,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+          ),
+              ],
+            ),
+          ),
+          
+           /*   Padding(
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -66,10 +82,10 @@ class MoviePage extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
-              SizedBox(height: 110),
+              ),*/
+              //SizedBox(height: 110),
               Padding(
-                  padding: EdgeInsets.symmetric(vertical: 50, horizontal: 30),
+                  padding: EdgeInsets.symmetric(vertical: 0, horizontal: 30),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -138,7 +154,7 @@ class MoviePage extends StatelessWidget {
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             padding: const EdgeInsets.all(15.0),
-                            primary: Color.fromARGB(255, 158, 5, 138),
+                            primary: Color.fromARGB(255, 97, 5, 158),
                             fixedSize: Size(
                               MediaQuery.of(context).size.width * 0.900,
                               50,
