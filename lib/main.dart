@@ -36,36 +36,35 @@ class MoviePage extends StatelessWidget {
       body: Stack(
         children: [
           BackgroundGradient(),
-          
           SingleChildScrollView(
               child: SafeArea(
                   child: Column(
             children: [
               Opacity(
-            opacity: 1.0,
-            child: Stack(
-              children: [
-                Container(
-                  child: Image.asset(
-                    "assets/SasL.jpg",
-                    height: 210,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
+                opacity: 1.0,
+                child: Stack(
+                  children: [
+                    Container(
+                      child: Image.asset(
+                        "assets/SasL.jpg",
+                        height: 200,
+                        width: double.infinity,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Icon(
+                        Icons.arrow_back,
+                        color: Colors.white,
+                        size: 25,
+                      ),
+                    ),
+                  ],
                 ),
-                Align(
-            alignment: Alignment.topLeft,
-            child: Icon(
-                          Icons.arrow_back,
-                          color: Colors.white,
-                          size: 30,
-                        ),
-          ),
-              ],
-            ),
-          ),
-          
-           /*   Padding(
+              ),
+
+              /*   Padding(
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -77,13 +76,13 @@ class MoviePage extends StatelessWidget {
                       child: Icon(
                         Icons.arrow_back,
                         color: Colors.white,
-                        size: 30,
+                        size: 25,
                       ),
                     ),
                   ],
                 ),
               ),*/
-              //SizedBox(height: 110),
+              //SizedBox(height: 90),
               Padding(
                   padding: EdgeInsets.symmetric(vertical: 0, horizontal: 30),
                   child: Column(
@@ -104,7 +103,7 @@ class MoviePage extends StatelessWidget {
                         "Um professor universitário encontra na estação de trem um filhote de cachorro da raça Akita, conhecida por sua lealdade. O cão passa a acompanhá-lo até a estação de trem e esperar sua volta. Até que um acontecimento inesperado altera sua vida.",
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 13,
+                          fontSize: 10,
                         ),
                       ),
                       SizedBox(height: 10),
@@ -116,7 +115,7 @@ class MoviePage extends StatelessWidget {
                         "Onde assistir",
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 17,
+                          fontSize: 13,
                         ),
                       ),
                       SizedBox(
@@ -124,13 +123,13 @@ class MoviePage extends StatelessWidget {
                       ),
                       WatchButtons(),
                       SizedBox(
-                        height: 15,
+                        height: 10,
                       ),
                       Text(
                         "Assistir ao trailer",
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 17,
+                          fontSize: 13,
                         ),
                       ),
                       SizedBox(
@@ -138,25 +137,25 @@ class MoviePage extends StatelessWidget {
                       ),
                       Trailers(),
                       SizedBox(
-                        height: 45,
+                        height: 30,
                       ),
                       Text(
                         "Avaliações",
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 17,
+                          fontSize: 13,
                         ),
                       ),
                       RatingBar(),
                       SizedBox(
-                        height: 15,
+                        height: 10,
                       ),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             padding: const EdgeInsets.all(15.0),
                             primary: Color.fromARGB(255, 97, 5, 158),
                             fixedSize: Size(
-                              MediaQuery.of(context).size.width * 0.900,
+                              MediaQuery.of(context).size.width * 0.850,
                               50,
                             ),
                             shape: RoundedRectangleBorder(
@@ -251,7 +250,7 @@ class MoviePageButtons extends StatelessWidget {
               "Minha lista",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 12,
+                fontSize: 10,
               ),
             ),
           ],
@@ -269,7 +268,7 @@ class MoviePageButtons extends StatelessWidget {
               "Avaliar",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 12,
+                fontSize: 10,
               ),
             ),
           ],
@@ -293,7 +292,7 @@ class MoviePageButtons extends StatelessWidget {
               "Compartilhar",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 12,
+                fontSize: 10,
               ),
             ),
           ],
@@ -313,7 +312,7 @@ class Infoline extends StatelessWidget {
             "97% relevante",
             style: TextStyle(
               color: Colors.green,
-              fontSize: 14,
+              fontSize: 10,
             ),
           ),
         ),
@@ -325,7 +324,7 @@ class Infoline extends StatelessWidget {
             "2009",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 14,
+              fontSize: 10,
             ),
           ),
         ),
@@ -337,7 +336,7 @@ class Infoline extends StatelessWidget {
             "Drama",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 14,
+              fontSize: 10,
             ),
           ),
         ),
@@ -401,40 +400,34 @@ class WatchButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        /*ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.all(15.0),
-            primary: Color.fromARGB(255, 59, 59, 59),
-            fixedSize: Size( MediaQuery.of(context).size.width * 0.425,50,),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15.0),
+        Container(
+          height: 40,
+          width: 150,
+          child: FloatingActionButton.extended(
+            label: Text(
+              'PRIME VIDEO',
             ),
-          ),
-          onPressed: () {},
-          child: RichText(
-            
+            backgroundColor: Colors.grey,
+            icon: ImageIcon(
+              AssetImage("assets/play-button.png"),
             ),
-          
-        ),*/
-
-        FloatingActionButton.extended(
-          label: Text('PRIME VIDEO'),
-          backgroundColor: Colors.grey,
-          icon: ImageIcon(
-            AssetImage("assets/play-button.png"),
+            onPressed: () {},
           ),
-          onPressed: () {},
         ),
         SizedBox(
-          width: 60,
+          width: 5,
         ),
-        FloatingActionButton.extended(
-          label: Text('GLOBOPLAY'),
-          backgroundColor: Colors.red,
-          icon: ImageIcon(
-            AssetImage("assets/play-button.png"),
+        Container(
+          height: 40,
+          width: 150,
+          child: FloatingActionButton.extended(
+            label: Text('GLOBOPLAY'),
+            backgroundColor: Colors.red,
+            icon: ImageIcon(
+              AssetImage("assets/play-button.png"),
+            ),
+            onPressed: () {},
           ),
-          onPressed: () {},
         ),
       ],
     );
